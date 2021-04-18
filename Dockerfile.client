@@ -1,0 +1,11 @@
+FROM golang
+
+WORKDIR /go/src/GoMicroservices1Assignment
+
+COPY client .
+
+RUN go mod init
+
+RUN go build -o main
+
+CMD while true; do sleep 1000; done;

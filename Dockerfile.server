@@ -1,0 +1,17 @@
+FROM golang
+
+WORKDIR /go/src/GoMicroservices1Assignment
+
+COPY server .
+
+RUN go mod init
+
+RUN go get -u "github.com/go-sql-driver/mysql"
+
+RUN go get -u "github.com/google/uuid"
+
+RUN go get -u "github.com/gorilla/mux"
+
+RUN go build -o main
+
+CMD ["./main"]
